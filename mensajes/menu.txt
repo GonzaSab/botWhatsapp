@@ -1,9 +1,7 @@
 Elegi alguna de estas opciones:
 
-Opcion 1 - Op1
-Opcion 2 - Op2
-Opcion 3 - Op3
-Opcion 4 - Op4
-Opcion 5 - Op5
+Opcion 1 - Menu
+Opcion 2 - Reservar mesa
+Opcion 3 - Hacer consultas
 
 Opcion 0 - Salir

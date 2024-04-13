@@ -13,15 +13,16 @@
         "@bot-whatsapp/bot": "latest",
         "@bot-whatsapp/cli": "latest",
         "@bot-whatsapp/database": "latest",
-        "@bot-whatsapp/provider": "latest",
         "@bot-whatsapp/portal": "latest",
+        "@bot-whatsapp/provider": "latest",
         "@whiskeysockets/baileys": "6.5.0",
-        "wa-sticker-formatter": "4.4.4",
-        "cache-manager": "5.2.4"
+        "cache-manager": "5.2.4",
+        "openai": "^3.3.0",
+        "wa-sticker-formatter": "4.4.4"
     },
     "devDependencies": {
-        "eslint-plugin-bot-whatsapp": "latest",
-        "eslint": "^8.52.0"
+        "eslint": "^8.52.0",
+        "eslint-plugin-bot-whatsapp": "latest"
     },
     "author": "",
     "license": "ISC"

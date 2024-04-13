@@ -1,17 +1,37 @@
 const { createBot, createProvider, createFlow, addKeyword, EVENTS } = require('@bot-whatsapp/bot')
+require("dotenv").config
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
 const path = require("path")
 const fs = require("fs")
+const chat = require("./chatGPT")
 
 const menuPath = path.join(__dirname, "mensajes", "menu.txt")
 const menu = fs.readFileSync(menuPath, "utf8")
 
-const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
-    .addAnswer('Buanas como estas?')
-    .addAnswer('Bienvenido a este curso')
+const pathConsultas = path.join(__dirname, "mensajes", "promptConsultas.txt")
+const promptConsultas = fs.readFileSync(pathConsultas, "utf8")
+
+const flowMenuRest = addKeyword(EVENTS.ACTION)
+    .addAnswer('Este es el menu', {
+        media: "https://www.ujamaaresort.org/wp-content/uploads/2018/01/Ujamaa-restaurant-menu.pdf"
+    })
+
+const flowReservar = addKeyword(EVENTS.ACTION)
+    .addAnswer('Este es el flow reservas: ww.hacetureserva.com')
+
+
+const flowConsultas = addKeyword(EVENTS.ACTION)
+    .addAnswer('Este es el flow consultas')
+    .addAnswer("Hace tu consulta", { capture: true }, async (ctx, ctxFn) => {
+        const prompt = promptConsultas
+        const consulta = ctx.body
+        const answer = await chat(prompt, consulta)
+        await ctxFn.flowDynamic(answer.content)
+    })
+
 
 const flowWelcome = addKeyword(EVENTS.WELCOME)
     .addAnswer("Este es el flujo Welcome", {
@@ -29,22 +49,18 @@ const menuFlow = addKeyword("Menu").addAnswer(
     menu,
     { capture: true },
     async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
-        if (!["1", "2", "3", "4", "5", "0"].includes(ctx.body)) {
+        if (!["1", "2", "3", "0"].includes(ctx.body)) {
             return fallBack(
                 "Respuesta no válida, por favor selecciona una de las opciones."
             );
         }
         switch (ctx.body) {
             case "1":
-                return await flowDynamic("Esta es la opcion 1");
+                return gotoFlow(flowMenuRest);
             case "2":
-                return await flowDynamic("Esta es la opcion 2");
+                return gotoFlow(flowReservar);
             case "3":
-                return await flowDynamic("Esta es la opcion 3");
-            case "4":
-                return await flowDynamic("Esta es la opcion 4");
-            case "5":
-                return await flowDynamic("Esta es la opcion 5");
+                return gotoFlow(flowConsultas);
             case "0":
                 return await flowDynamic(
                     "Saliendo... Puedes volver a acceder a este menú escribiendo '*Menu*'"
@@ -55,7 +71,7 @@ const menuFlow = addKeyword("Menu").addAnswer(
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flowPrincipal, flowWelcome, menuFlow])
+    const adapterFlow = createFlow([flowWelcome, menuFlow, flowMenuRest, flowReservar, flowConsultas])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({
