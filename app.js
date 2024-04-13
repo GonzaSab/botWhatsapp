@@ -7,12 +7,21 @@ const MockAdapter = require('@bot-whatsapp/database/mock')
 const path = require("path")
 const fs = require("fs")
 const chat = require("./chatGPT")
+const { handlerAI } = require("./whisper")
 
 const menuPath = path.join(__dirname, "mensajes", "menu.txt")
 const menu = fs.readFileSync(menuPath, "utf8")
 
 const pathConsultas = path.join(__dirname, "mensajes", "promptConsultas.txt")
 const promptConsultas = fs.readFileSync(pathConsultas, "utf8")
+
+const flowVoice = addKeyword(EVENTS.VOICE_NOTE).addAnswer("Esta es una nota de voz", null, async (ctx, ctxFn) => {
+    const text = await handlerAI(ctx)
+    const prompt = promptConsultas
+    const consulta = text
+    const answer = await chat(prompt, consulta)
+    await ctxFn.flowDynamic(answer.content)
+})
 
 const flowMenuRest = addKeyword(EVENTS.ACTION)
     .addAnswer('Este es el menu', {
@@ -71,7 +80,7 @@ const menuFlow = addKeyword("Menu").addAnswer(
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flowWelcome, menuFlow, flowMenuRest, flowReservar, flowConsultas])
+    const adapterFlow = createFlow([flowWelcome, menuFlow, flowMenuRest, flowReservar, flowConsultas, flowVoice])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({

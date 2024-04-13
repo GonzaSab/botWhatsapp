@@ -2,36 +2,43 @@
   key: {
     remoteJid: '447456094679@s.whatsapp.net',
     fromMe: false,
-    id: '3A1753B7FFD3DCDDA528',
+    id: '3AB9D985E5FD195E1A25',
     participant: undefined
   },
-  messageTimestamp: 1713018787,
+  messageTimestamp: 1713019853,
   pushName: 'Gonza Sabaino',
   broadcast: false,
   message: Message {
-    conversation: 'Menu',
+    audioMessage: AudioMessage {
+      url: 'https://mmg.whatsapp.net/v/t62.7117-24/55812186_412745164713088_3328994082820003921_n.enc?ccb=11-4&oh=01_ASB0hb9ntV6WXhn772jwbU1hVimU_cXV5NQupQCNeoo8VQ&oe=6642007B&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'audio/ogg; codecs=opus',
+      fileSha256: [Uint8Array],
+      fileLength: [Long],
+      seconds: 3,
+      ptt: true,
+      mediaKey: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7117-24/55812186_412745164713088_3328994082820003921_n.enc?ccb=11-4&oh=01_ASB0hb9ntV6WXhn772jwbU1hVimU_cXV5NQupQCNeoo8VQ&oe=6642007B&_nc_sid=5e03e0',
+      mediaKeyTimestamp: [Long],
+      streamingSidecar: [Uint8Array],
+      waveform: [Uint8Array]
+    },
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Menu',
+  body: '_event_voice_note__71f82969-13f1-405c-bfd8-9afc1d898f89',
   from: '447456094679'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_14ac4de6-69d9-45ba-9483-cf21d6b51e67',
-  keyword: 'key_114263f1-82f8-4447-94b3-6143b10ad179',
-  answer: 'Elegi alguna de estas opciones:\n' +
-    '\n' +
-    'Opcion 1 - Menu\n' +
-    'Opcion 2 - Reservar mesa\n' +
-    'Opcion 3 - Hacer consultas\n' +
-    '\n' +
-    'Opcion 0 - Salir',
+  ref: 'ans_50037cc5-05cd-4471-b150-4b2c33b7db5a',
+  keyword: 'key_bc8b8f93-e7b2-4355-bb33-06098b9c9117',
+  answer: 'Esta es una nota de voz',
   options: {
     media: null,
     buttons: [],
-    capture: true,
+    capture: false,
     child: null,
     delay: 0,
     idle: null,
@@ -40,89 +47,5 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '990b5e82977992c8b20df056ec72ceac'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '447456094679@s.whatsapp.net',
-    fromMe: false,
-    id: '3AF5CC428AA3B093808F',
-    participant: undefined
-  },
-  messageTimestamp: 1713018788,
-  pushName: 'Gonza Sabaino',
-  broadcast: false,
-  message: Message {
-    conversation: '3',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: '3',
-  from: '447456094679'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '447456094679@s.whatsapp.net',
-    fromMe: false,
-    id: '3A25510BC4886C689455',
-    participant: undefined
-  },
-  messageTimestamp: 1713018798,
-  pushName: 'Gonza Sabaino',
-  broadcast: false,
-  message: Message {
-    conversation: 'que menu me recomendas que tenga palta',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'que menu me recomendas que tenga palta',
-  from: '447456094679'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_14ac4de6-69d9-45ba-9483-cf21d6b51e67',
-  keyword: 'key_114263f1-82f8-4447-94b3-6143b10ad179',
-  answer: 'Elegi alguna de estas opciones:\n' +
-    '\n' +
-    'Opcion 1 - Menu\n' +
-    'Opcion 2 - Reservar mesa\n' +
-    'Opcion 3 - Hacer consultas\n' +
-    '\n' +
-    'Opcion 0 - Salir',
-  options: {
-    media: null,
-    buttons: [],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '990b5e82977992c8b20df056ec72ceac'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '447456094679@s.whatsapp.net',
-    fromMe: false,
-    id: '3AFCAB64CE09BD1B4824',
-    participant: undefined
-  },
-  messageTimestamp: 1713018813,
-  pushName: 'Gonza Sabaino',
-  broadcast: false,
-  message: Message {
-    conversation: '0',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: '0',
-  from: '447456094679'
+  refSerialize: '4076f2e502164f6ec02ff2f316e81444'
 }
