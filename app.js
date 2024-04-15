@@ -3,7 +3,8 @@ require("dotenv").config
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
-const MockAdapter = require('@bot-whatsapp/database/mock')
+//const MockAdapter = require('@bot-whatsapp/database/mock')
+const MongoAdapter = require('@bot-whatsapp/database/mongo')
 const path = require("path")
 const fs = require("fs")
 const chat = require("./chatGPT")
@@ -79,7 +80,10 @@ const menuFlow = addKeyword("Menu").addAnswer(
 );
 
 const main = async () => {
-    const adapterDB = new MockAdapter()
+    const adapterDB = new MongoAdapter({
+        dbUri: process.env.MONGO_DB_URI,
+        dbName: "YoutubeTest"
+    })
     const adapterFlow = createFlow([flowWelcome, menuFlow, flowMenuRest, flowReservar, flowConsultas, flowVoice])
     const adapterProvider = createProvider(BaileysProvider)
 

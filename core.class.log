@@ -2,43 +2,74 @@
   key: {
     remoteJid: '447456094679@s.whatsapp.net',
     fromMe: false,
-    id: '3AB9D985E5FD195E1A25',
+    id: '3AD204B95CC923469056',
     participant: undefined
   },
-  messageTimestamp: 1713019853,
+  messageTimestamp: 1713182712,
   pushName: 'Gonza Sabaino',
   broadcast: false,
   message: Message {
-    audioMessage: AudioMessage {
-      url: 'https://mmg.whatsapp.net/v/t62.7117-24/55812186_412745164713088_3328994082820003921_n.enc?ccb=11-4&oh=01_ASB0hb9ntV6WXhn772jwbU1hVimU_cXV5NQupQCNeoo8VQ&oe=6642007B&_nc_sid=5e03e0&mms3=true',
-      mimetype: 'audio/ogg; codecs=opus',
-      fileSha256: [Uint8Array],
-      fileLength: [Long],
-      seconds: 3,
-      ptt: true,
-      mediaKey: [Uint8Array],
-      fileEncSha256: [Uint8Array],
-      directPath: '/v/t62.7117-24/55812186_412745164713088_3328994082820003921_n.enc?ccb=11-4&oh=01_ASB0hb9ntV6WXhn772jwbU1hVimU_cXV5NQupQCNeoo8VQ&oe=6642007B&_nc_sid=5e03e0',
-      mediaKeyTimestamp: [Long],
-      streamingSidecar: [Uint8Array],
-      waveform: [Uint8Array]
-    },
+    conversation: 'Hola',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: '_event_voice_note__71f82969-13f1-405c-bfd8-9afc1d898f89',
+  body: 'Hola',
   from: '447456094679'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_50037cc5-05cd-4471-b150-4b2c33b7db5a',
-  keyword: 'key_bc8b8f93-e7b2-4355-bb33-06098b9c9117',
-  answer: 'Esta es una nota de voz',
+  ref: 'ans_330fe467-6830-4f70-8ae2-cea4d08314bb',
+  keyword: 'key_76013372-3d01-4c82-9df7-3f43be50dc11',
+  answer: 'Este es el flujo Welcome',
   options: {
     media: null,
     buttons: [],
     capture: false,
+    child: null,
+    delay: 100,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '8bf53bbc6002a3f73081c70e49f4bcb1'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '447456094679@s.whatsapp.net',
+    fromMe: false,
+    id: '3AB9F77915D606193A2C',
+    participant: undefined
+  },
+  messageTimestamp: 1713182714,
+  pushName: 'Gonza Sabaino',
+  broadcast: false,
+  message: Message {
+    conversation: 'Menu',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Menu',
+  from: '447456094679'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_9ceed74c-83b0-436e-8bbd-5f6207fe3261',
+  keyword: 'key_0fb07f40-795c-4394-bfb6-0b3f9aa1b1d9',
+  answer: 'Elegi alguna de estas opciones:\n' +
+    '\n' +
+    'Opcion 1 - Menu\n' +
+    'Opcion 2 - Reservar mesa\n' +
+    'Opcion 3 - Hacer consultas\n' +
+    '\n' +
+    'Opcion 0 - Salir',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
     child: null,
     delay: 0,
     idle: null,
@@ -47,5 +78,25 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '4076f2e502164f6ec02ff2f316e81444'
+  refSerialize: '72a9b81bbf710f8028dfe3358c3911ab'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '447456094679@s.whatsapp.net',
+    fromMe: false,
+    id: '3A71544F936C2DA444BE',
+    participant: undefined
+  },
+  messageTimestamp: 1713182715,
+  pushName: 'Gonza Sabaino',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '2',
+  from: '447456094679'
 }
